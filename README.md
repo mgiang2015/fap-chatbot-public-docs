@@ -3,98 +3,10 @@
 
 Chatbot for internal use of FPT.
 
-
-
-
 ## Table of Contents
 
-- [Setup Dev Environment](README.md#setup-dev-environment)
-- [Environment variables](README.md#environment-variables)
-- [Running on development locally](README.md#running-on-development-locally)
-- [Deployment (on Test Server)](README.md#deployment-on-test-server)
 - [Getting Started](README.md#getting-started)
 - [References](README.md#references)
-
-
-
-
-## Setup Dev Environment
-A guide to install relevant applications that are required to setup dev environment.
-### Prerequisites
-1. Install python 3.11 (https://www.python.org/downloads/release/python-3116/)
-2. Install node.js (https://nodejs.org/en/download)
-3. Install Git (https://git-scm.com/downloads)
-4. Install Docker Desktop (https://docs.docker.com/desktop/install/windows-install/)
-
-## Environment variables
-Please contact [here](docs/contacts.md) to get the .env files for both frontend and backend. 
-### Frontend
-.env file for frontend should include the following: 
-1. "REACT_APP_BACKEND_URL". The value is "http://ip:8000"
-
-### Backend
-.env file for backend should include the following:
-1. HOST=database ip address
-2. PORT=3306
-3. BACKEND_HOST=backend ip address
-4. BACKEND_PORT=8000
-5. FRONTEND_HOST=frontend ip address
-6. FRONTEND_PORT=80
-7. HUGGINGFACE_API_TOKEN
-8. OPENAI_API_KEY
-9. REDIRECT_URI=http://frontend_ip:80/authToken
-10. SENDER_MAIL
-11. SENDER_MAIL_APP_PASSWORD
-12. MONGODB_CONNECTION_STRING
-
-
-
-
-## Running on development locally
-
-### Frontend
-
-1. Clone the frontend repository.
-2. Paste .env file for frontend in root folder
-3. Run `npm install` and `npm start`.
-4. If you have problems with fixing ESLint, run `npm run lint -- --fix`
-
-### Setup Virtual Environment
-
-1. In the terminal, navigate to the same folder path as frontend repository
-2. Enter `Set-ExecutionPolicy Unrestricted -Scope Process`
-3. Create virtual environment (venv), with reference to (https://docs.python.org/3/library/venv.html)
-
-### Backend
-
-1. Clone the backend repository.
-2. Navigate to the API directory.
-3. Paste .env file for backend.
-4. Activate venv first, then install the dependencies in requirements.txt via pip
-5. Navigate to the app directory.
-6. Run `uvicorn main:app --port 8000 --reload`.
-
-### Database
-
-1. Clone the backend repository if you haven't done so already.
-2. If you have Docker installed, you can build and run the application using the following commands:
-3. `docker build -t image_name .`.
-4. `docker run -d -p 3306:3306 image_name`.
-
-## Deployment (on Test Server)
-To deploy the chatbot to the test server, you should do the following: 
-1. Find the `docker-compose.yml` file in the frontend, check that if all the services (backend, frontend, database) are 
-not being commented out already.
-2. Run `docker-compose -f docker-compose.yml up --build` to build the images.
-3. `docker save -o <image_name>.tar <image_name>` with <image_name> refer to backend, frontend, database.
-4. After saving the 3 images, you should copy them into the server: `scp <image_name>.tar test@192.168.1.24:`. This
-requires the password for the test server, you can contact [here](docs/contacts.md) for more information.
-5. SSH into the test server (`ssh test@192.168.1.24`).
-   Same as the previous step, you need the password for accessing the
-test server.
-6. Run `docker load < <image_name>.tar`to load the 3 images to the server docker.
-7. Run `docker compose -f docker-compose-old.yml up` to upload the images to the test server. 
-   If there are no errors, the deployment is successful, and everyone in the company can access the server @192.168.1.24.
 
 ## Getting Started
 
@@ -108,7 +20,6 @@ To register with ChatFPT as an admin:
 1. Register an account in normal user login and verify email
 2. Go to MySQL Workbench and look for "department" column. Change "General User" to "Admin"
 3. Login with same credentials in admin login (/admin/login)
-
 
 #### Option 2 (Terminal method)
 1. Register an account in normal user login and verify email
