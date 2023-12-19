@@ -14,17 +14,17 @@ To register with Saola as an admin please use your own email in /admin/register
 
 ### Navigation Bar
 The navigation bar will be visible after logging in successfully. In the navigation bar, you can switch between File Searcher, Chat, Document Summary and more. In here, you can also set to light/dark theme, and logout via the profile icon.
-![Alt text](images/navbar.PNG)
+![Alt text](images/navbar.png)
 
 ### File Searcher
 
 After logging in, you will be navigated to this page. This page does the searching of files for you. 
-![Alt text](images/file_searcher.PNG)
+![Alt text](images/file_searcher.png)
 
 ### Chat
 
 This is the home screen where you can ask Saola questions. You can also open multiple chats for different topics and go back to visit them anytime you want. 
-![Alt text](images/chatbot.PNG)
+![Alt text](images/chatbot.png)
 
 ### Document Summary
 
