@@ -1,7 +1,7 @@
 
 # Infrastructure
 
-![Infrastructure ](/Diagrams/deployment%20diagram.jpg)
+![Infrastructure ](Diagrams\deployment diagram.jpg)
 
 In the server, the following are needed:
 
